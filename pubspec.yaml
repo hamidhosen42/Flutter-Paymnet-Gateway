@@ -38,6 +38,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_stripe: any
   http: any
+  flutter_bkash: 
+  flutter_paystack: 
 
 dev_dependencies:
   flutter_test:

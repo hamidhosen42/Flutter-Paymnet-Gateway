@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe_paymnet/bikash_payment.dart';
 import 'package:flutter_stripe_paymnet/payment_controller.dart';
 
 class PaymentHomeScreen extends StatefulWidget {
@@ -18,9 +19,20 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
 
     return Scaffold(
       body: Center(
-        child: ElevatedButton(
-          onPressed: () => obj.makePayment(amount: '5', currency: 'USD'),
-          child: Text('Make A Payment'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () => obj.makePayment(amount: '5', currency: 'USD'),
+              child: Text('Make A Payment'),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>BikashPayment(title: 'bKash Demo')));
+              },
+              child: Text('Bikash Payment'),
+            ),
+          ],
         ),
       ),
     );
